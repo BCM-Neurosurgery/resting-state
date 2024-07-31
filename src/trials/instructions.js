@@ -4,7 +4,7 @@ import { baseStimulus } from '../lib/markup/stimuli'
 const initialInstructions = () => {
   const stimulus = baseStimulus(`
   <div class='instructions'>
-  <h1>${lang.instructions.moving_dot}</h1>
+  <h1>${lang.instructions.fixate}</h1>
   </div>
   `, true)
   return {

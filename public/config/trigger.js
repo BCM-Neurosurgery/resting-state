@@ -9,24 +9,35 @@ const comName = 'COM3'
 
 // NOTE - these event codes must match what is in public/config/trigger.js
 const eventCodes = {
-	'test_connect': 32,
-  'open_task': 12,
-  'left': 1,
-  'right': 2,
-  'up': 3,
-  'down': 4,
-  'center': 5,
-	'blink': {
-		'start': 6,
-		'stop':7
+	'test_connect': 16,
+  'open_task': 15,
+	'fixate': {
+		'start': 1,
+		'stop':2
 	},
 	'close': {
-		'start': 8,
-		'stop': 9
+		'start': 3,
+		'stop': 4
+	},
+	'tap_ins': {
+		'start': 5,
+		'stop': 6
+	},
+	'tap_lead': {
+		'start': 7,
+		'stop': 8
+	},
+	'stretch_neck_left': {
+		'start': 9,
+		'stop': 10
+	},
+	'stretch_neck_right': {
+		'start': 11,
+		'stop': 12
 	},
 	'rest': {
-		'start': 10,
-		'stop': 11
+		'start': 13,
+		'stop': 14
 	}
 }
 

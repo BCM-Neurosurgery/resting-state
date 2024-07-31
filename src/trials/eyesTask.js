@@ -4,14 +4,14 @@ import { sleep, beep } from '../lib/taskUtils'
 import { eventCodes } from '../config/trigger'
 import { lang } from '../config/main'
 
-const eyesTask = (option) => {
+const eyesTask = (option, trial_duration, sleep_duration) => {
   let stimulus = `<div id="dot-container"><h3>${lang[option]}</h3></div>` + photodiodeGhostBox()
 
   return {
     'type': 'html_keyboard_response',
     'choices': jsPsych.NO_KEYS,
     'stimulus': stimulus,
-    'trial_duration': 120000,
+    'trial_duration': trial_duration,
     'on_load': async () => {
       let start = Date.now()
       let code = eventCodes[option]
@@ -19,7 +19,7 @@ const eyesTask = (option) => {
       pdSpotEncode(code.start)
       beep()
       data.push({trial: option, code: code.start, rt: Date.now() - start })
-      await sleep(119000)
+      await sleep(sleep_duration)
       pdSpotEncode(code.stop)
       beep()
       data.push({trial: option, code: code.stop, rt: Date.now() - start })

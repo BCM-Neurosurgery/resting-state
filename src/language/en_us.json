@@ -26,19 +26,19 @@
     "not_found": "Note: no event marker found."
   },
   "instructions": {
-    "adjust_volume": "Set tablet volume to 50/100.",
-    "camera": "Make sure the camera is pointing to you and your face is within the camera area.",
-    "check_event_marker": "Make sure the event marker is connected and then continue."
-  },
-  "instructions": {
-    "moving_dot": "Try to relax and follow the dot on the screen as it moves. Try to relax your shoulders, don't clench your jaw, and try not to move. Movements affect the quality of the recordings.",
-    "blink": "For this next section, start blinking when you hear a \"beep\", and stop when you hear another \"beep\".",
-    "close_eyes": "For this next section, close your eyes when you hear a \"beep\", and open when you hear another \"beep\". ",
     "fixate": "For the next 2 minutes, fixate on the dot in the middle of the screen and try to relax.",
+    "close_eyes": "For this next section, close your eyes when you hear a \"beep\", and open when you hear another \"beep\". ",
+    "tap_ins": "For this next section, tap the INS when you hear a \"beep\", and stop when you hear another \"beep\". ",
+    "tap_lead": "For this next section, tap the lead extension when you hear a \"beep\", and stop when you hear another \"beep\". ",
+    "stretch_neck_left": "For this next section, stretch your neck from left to center when you hear a \"beep\", and stop when you hear another \"beep\". ",
+    "stretch_neck_right": "For this next section, stretch your neck from right to center when you hear a \"beep\", and stop when you hear another \"beep\". ",
     "align_photodiode": "Make sure the photodiode is aligned and the EEG recording has begun before continuing.",
     "adjust_volume": "Set tablet volume to 50/100.",
     "camera": "Make sure the camera is pointing to you and your face is within the camera area."
   },
-  "blink": "Blink.",
-  "close": "Close your eyes."
+  "close": "Close your eyes.",
+  "tap_ins": "tap the INS. ",
+  "tap_lead": "tap the lead extension. ",
+  "stretch_neck_left": "Stretch your neck from left to the center. ",
+  "stretch_neck_right": "Stretch your neck from right to the center. "
 }
