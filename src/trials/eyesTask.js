@@ -11,7 +11,7 @@ const eyesTask = (option) => {
     'type': 'html_keyboard_response',
     'choices': jsPsych.NO_KEYS,
     'stimulus': stimulus,
-    'trial_duration': 11000,
+    'trial_duration': 120000,
     'on_load': async () => {
       let start = Date.now()
       let code = eventCodes[option]
@@ -19,7 +19,7 @@ const eyesTask = (option) => {
       pdSpotEncode(code.start)
       beep()
       data.push({trial: option, code: code.start, rt: Date.now() - start })
-      await sleep(10000)
+      await sleep(119000)
       pdSpotEncode(code.stop)
       beep()
       data.push({trial: option, code: code.stop, rt: Date.now() - start })

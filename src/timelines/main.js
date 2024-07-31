@@ -9,16 +9,10 @@ import fixation from '../trials/fixation'
 
 let primaryTimeline = [
   preamble,
-  movingDot('left'),
-  movingDot('right'),
-  movingDot('up'),
-  movingDot('down'),
-  instructions(lang.instructions.blink),
-  eyesTask('blink'),
+  instructions(lang.instructions.fixate),
+  fixation(120000),
   instructions(lang.instructions.close_eyes),
   eyesTask('close'),
-  instructions(lang.instructions.fixate),
-  fixation(91000),
 ];
 
 if (config.USE_CAMERA) {
