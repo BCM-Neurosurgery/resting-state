@@ -42,6 +42,10 @@ jobs:
         with:
           node-version: 12.x
 
+      # Create or update .npmrc to enforce https for git dependencies
+      - name: Force npm to use https
+        run: echo 'git+https://github.com/:x-oauth-basic@github.com' > .npmrc
+
       # install, test, build package
       - name: npm install
         run: |
