@@ -28,17 +28,17 @@
   "instructions": {
     "fixate": "For the next 2 minutes, fixate on the dot in the middle of the screen and try to relax.",
     "close_eyes": "For this next section, close your eyes when you hear a \"beep\", and open when you hear another \"beep\". ",
-    "tap_ins": "For this next section, tap the INS when you hear a \"beep\", and stop when you hear another \"beep\". ",
-    "tap_lead": "For this next section, tap the lead extension when you hear a \"beep\", and stop when you hear another \"beep\". ",
-    "stretch_neck_left": "For this next section, stretch your neck from left to center when you hear a \"beep\", and stop when you hear another \"beep\". ",
-    "stretch_neck_right": "For this next section, stretch your neck from right to center when you hear a \"beep\", and stop when you hear another \"beep\". ",
+    "tap_ins": "For this next section, start tapping the device in your chest when you hear a \"beep\", and stop when you hear another \"beep\". ",
+    "tap_lead": "For this next section, start tapping the leads behind your ear when you hear a \"beep\", and stop when you hear another \"beep\". ",
+    "stretch_neck_left": "For the next 20 seconds, start stretching your neck to the left and back to the center a few times when you hear a \"beep\", and stop when you hear another \"beep\". ",
+    "stretch_neck_right": "For the next 20 seconds, start stretching your neck to the right and back to the center a few times when you hear a \"beep\", and stop when you hear another \"beep\". ",
     "align_photodiode": "Make sure the photodiode is aligned and the EEG recording has begun before continuing.",
     "adjust_volume": "Set tablet volume to 50/100.",
     "camera": "Make sure the camera is pointing to you and your face is within the camera area."
   },
   "close": "Close your eyes.",
-  "tap_ins": "tap the INS. ",
-  "tap_lead": "tap the lead extension. ",
-  "stretch_neck_left": "Stretch your neck from left to the center. ",
-  "stretch_neck_right": "Stretch your neck from right to the center. "
+  "tap_ins": "tap the device in your chest. ",
+  "tap_lead": "tap the leads behind your ear. ",
+  "stretch_neck_left": "Stretch your neck to the left and back to the center a few times. ",
+  "stretch_neck_right": "Stretch your neck to the right and back to the center a few times. "
 }

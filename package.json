@@ -41,7 +41,7 @@
     "test": "react-scripts test",
     "prebuild": "electron-rebuild",
     "build": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
-    "package:windows": "electron-packager . resting-state --platform win32 --arch x64 --icon ./assets/icons/win/icon.ico --out dist/ --overwrite --asar ",
+    "package:windows": "electron-packager . resting-state --platform win32 --arch x64 --icon ./assets/icons/win/icon.ico --out dist/ --asar ",
     "package:mac": "electron-packager . --platform darwin --arch x64 --out dist/ --icon ./assets/icons/mac/icon.icns --overwrite",
     "package:linux": "electron-packager . --platform linux --arch x64 --icon ./assets/icons/mac/icon.icns --out dist/ --overwrite",
     "postpackage:windows": "electron-installer-windows --src dist/resting-state-win32-x64/ --dest dist/installers/ --overwrite --homepage https://ccv.brown.edu/",
@@ -65,7 +65,28 @@
     "build:clinic:video": "dotenv -e env/.env.clinic dotenv -e env/.env.video npm run build",
     "build:home": "dotenv -e env/.env.home npm run build",
     "build:clinic": "dotenv -e env/.env.clinic npm run build",
-    "build:firebase": "dotenv -e env/.env.firebase npm run build"
+    "build:firebase": "dotenv -e env/.env.firebase npm run build",
+    "dist": "electron-builder --win"
+  },
+  "build": {
+    "appId": "com.yourapp.id",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "./assets/icons/win/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "./assets/icons/mac/icon.icns"
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "icon": "./assets/icons/png"
+    }
   },
   "config": {
     "commitizen": {
@@ -96,6 +117,7 @@
     "dotenv": "^8.2.0",
     "dotenv-cli": "^4.0.0",
     "electron": "6.1.1",
+    "electron-builder": "^24.13.3",
     "electron-devtools-installer": "^3.2.0",
     "electron-packager": "^14.2.1",
     "electron-rebuild": "^1.8.6",
@@ -107,6 +129,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "firebase-cli": "^1.2.0",
     "firebase-tools": "^9.12.1",
+    "node-gyp": "^8.4.1",
     "require-context.macro": "^1.1.1"
   },
   "babel": {
