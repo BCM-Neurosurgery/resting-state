@@ -66,7 +66,9 @@
     "build:home": "dotenv -e env/.env.home npm run build",
     "build:clinic": "dotenv -e env/.env.clinic npm run build",
     "build:firebase": "dotenv -e env/.env.firebase npm run build",
-    "dist": "electron-builder --win"
+    "dist": "npm run dist:clinic",
+    "dist:clinic": "dotenv -e env/.env.clinic npm run dist:clinic:base",
+    "dist:clinic:base": "electron-builder --win"
   },
   "build": {
     "appId": "com.yourapp.id",
