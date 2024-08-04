@@ -29,6 +29,11 @@ jobs:
     steps:
     # Set up js package
       - uses: actions/checkout@v1
+
+      # Add this step to configure git to use https instead of git protocol
+      - name: Configure git to use https instead of git
+        run: git config --global url."https://".insteadOf git://
+
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
@@ -36,10 +41,6 @@ jobs:
       - name: Set package version and name
         uses: brown-ccv/gh-actions/get-package-info@main
         id: package_info
-
-      # Create or update .npmrc to enforce https for git dependencies
-      - name: Force npm to use https
-        run: echo 'git+https://github.com/:x-oauth-basic@github.com' > .npmrc
 
       # install, test, build package
       - name: npm install
