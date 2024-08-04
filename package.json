@@ -35,16 +35,15 @@
   "scripts": {
     "commit": "git-cz",
     "postinstall": "node version.js && npm run rebuild",
-    "start-react": "cross-env NODE_OPTIONS=--openssl-legacy-provider BROWSER=\"none\" NODE_PATH=\"./src\" react-scripts start",
-    "start": "npm run start-react",
+    "start": "cross-env BROWSER=\"none\" NODE_PATH=\"./src\" react-scripts start",
     "start:browser": "react-scripts start",
     "test": "react-scripts test",
     "prebuild": "electron-rebuild",
-    "build": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
-    "package:windows": "electron-packager . resting-state --platform win32 --arch x64 --icon ./assets/icons/win/icon.ico --out dist/ --asar ",
+    "build": "react-scripts build",
+    "package:windows": "electron-packager . --platform win32 --arch x64 --icon ./assets/icons/win/icon.ico --out dist/ --overwrite --asar ",
     "package:mac": "electron-packager . --platform darwin --arch x64 --out dist/ --icon ./assets/icons/mac/icon.icns --overwrite",
     "package:linux": "electron-packager . --platform linux --arch x64 --icon ./assets/icons/mac/icon.icns --out dist/ --overwrite",
-    "postpackage:windows": "electron-installer-windows --src dist/resting-state-win32-x64/ --dest dist/installers/ --overwrite --homepage https://ccv.brown.edu/",
+    "postpackage:windows": "electron-installer-windows --src dist/%npm_package_name%-win32-x64/ --dest dist/installers/ --overwrite --homepage https://ccv.brown.edu/",
     "postpackage:linux": "electron-installer-debian --src dist/${npm_package_name}-linux-x64/ --dest dist/installers/ --arch x64 --overwrite",
     "installer:mac": "electron-installer-dmg ./dist/${npm_package_name}-darwin-x64/${npm_package_name}.app ${npm_package_name}-${npm_package_version} --out ./dist/installers/ --icon ./assets/icons/mac/icon.icns --overwrite",
     "rebuild": "electron-rebuild",
@@ -65,30 +64,7 @@
     "build:clinic:video": "dotenv -e env/.env.clinic dotenv -e env/.env.video npm run build",
     "build:home": "dotenv -e env/.env.home npm run build",
     "build:clinic": "dotenv -e env/.env.clinic npm run build",
-    "build:firebase": "dotenv -e env/.env.firebase npm run build",
-    "dist": "npm run dist:clinic",
-    "dist:clinic": "dotenv -e env/.env.clinic npm run dist:clinic:base",
-    "dist:clinic:base": "electron-builder --win"
-  },
-  "build": {
-    "appId": "com.yourapp.id",
-    "directories": {
-      "output": "dist"
-    },
-    "win": {
-      "target": "nsis",
-      "icon": "./assets/icons/win/icon.ico"
-    },
-    "mac": {
-      "target": "dmg",
-      "icon": "./assets/icons/mac/icon.icns"
-    },
-    "linux": {
-      "target": [
-        "AppImage"
-      ],
-      "icon": "./assets/icons/png"
-    }
+    "build:firebase": "dotenv -e env/.env.firebase npm run build"
   },
   "config": {
     "commitizen": {
@@ -119,9 +95,8 @@
     "dotenv": "^8.2.0",
     "dotenv-cli": "^4.0.0",
     "electron": "6.1.1",
-    "electron-builder": "^24.13.3",
     "electron-devtools-installer": "^3.2.0",
-    "electron-packager": "^14.2.1",
+    "electron-packager": "^14.0.6",
     "electron-rebuild": "^1.8.6",
     "eslint": "^5.16.0",
     "eslint-plugin-import": "^2.18.2",
@@ -131,7 +106,6 @@
     "eslint-plugin-standard": "^4.0.1",
     "firebase-cli": "^1.2.0",
     "firebase-tools": "^9.12.1",
-    "node-gyp": "^8.4.1",
     "require-context.macro": "^1.1.1"
   },
   "babel": {
