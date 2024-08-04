@@ -74,6 +74,11 @@ Install dot-env
 npm install dotenv-cli --save-dev
 ```
 
+Install cross-env
+```
+npm install cross-env --dev
+```
+
 Verify env variable is set
 ```
 dotenv -e env/.env.clinic printenv
