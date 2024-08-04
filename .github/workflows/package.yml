@@ -37,6 +37,10 @@ jobs:
         uses: brown-ccv/gh-actions/get-package-info@main
         id: package_info
 
+      # Create or update .npmrc to enforce https for git dependencies
+      - name: Force npm to use https
+        run: echo 'git+https://github.com/:x-oauth-basic@github.com' > .npmrc
+
       # install, test, build package
       - name: npm install
         run: |
