@@ -26,3 +26,68 @@ The task involves several relaxed tasks: following a moving dot with one's eyes,
 4. Run in development mode
 
 ```npm run dev```
+
+
+## Build
+
+export NODE_OPTIONS=--openssl-legacy-provider
+npm run build
+
+
+## Run
+
+unset NODE_OPTIONS
+npm run dev
+
+
+## Export clinic exe
+
+```
+docker run --rm -ti \
+ --env-file <(env | grep -iE 'DEBUG|NODE_|ELECTRON_|YARN_|NPM_|CI|CIRCLE|TRAVIS_TAG|TRAVIS|TRAVIS_REPO_|TRAVIS_BUILD_|TRAVIS_BRANCH|TRAVIS_PULL_REQUEST_|APPVEYOR_|CSC_|GH_|GITHUB_|BT_|AWS_|STRIP|BUILD_') \
+ --env ELECTRON_CACHE="/root/.cache/electron" \
+ --env ELECTRON_BUILDER_CACHE="/root/.cache/electron-builder" \
+ -v ${PWD}:/project \
+ -v ${PWD##*/}-node-modules:/project/node_modules \
+ -v ~/.cache/electron:/root/.cache/electron \
+ -v ~/.cache/electron-builder:/root/.cache/electron-builder \
+ electronuserland/builder:wine
+```
+
+Clear cache
+```
+rm yarn.lock
+```
+
+Use https
+```
+git config --global url."https://".insteadOf git://
+```
+
+Use newer version of node-gyp
+```
+npm install node-gyp --save-dev
+```
+
+Install dot-env
+```
+npm install dotenv-cli --save-dev
+```
+
+Verify env variable is set
+```
+dotenv -e env/.env.clinic printenv
+```
+
+gyp: name 'openssl_fips' is not defined while evaluating condition 'openssl_fips != ""' in binding.gyp while trying to load binding.gyp
+```
+nano /project/node_modules/@serialport/bindings/binding.gyp
+```
+Add
+'variables' : {
+    'openssl_fips': '',
+}
+
+```
+yarn && yarn dist win
+```
