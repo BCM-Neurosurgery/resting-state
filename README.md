@@ -93,6 +93,9 @@ Add
     'openssl_fips': '',
 }
 
+
+Export to win exe
 ```
-yarn && yarn dist win
+npm run build:clinic
+npm run dist:clinic
 ```
