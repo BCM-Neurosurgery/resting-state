@@ -46,14 +46,14 @@ jobs:
       - name: Force npm to use https
         run: echo 'git+https://github.com/:x-oauth-basic@github.com' > .npmrc
 
+      - name: install node-gyp
+        run: npm install node-gyp --save-dev
+
       # install, test, build package
       - name: npm install
         run: |
           npm config set "//npm.pkg.github.com/:_authToken" ${{ secrets.GITHUB_TOKEN }}
           npm install
-
-      - name: install node-gyp
-        run: npm install node-gyp --save-dev
 
       - name: Load .env file
         uses: xom9ikk/dotenv@v1.0.2
