@@ -21,7 +21,7 @@ const fixation = (duration) => {
       let data = []
       pdSpotEncode(start)
       data.push({code: start, rt: Date.now() - start_time})
-      await sleep(90000)
+      await sleep(119000)
       pdSpotEncode(stop)
       data.push({code: stop, rt: Date.now() - start })
       jsPsych.data.write(data)
