@@ -4,7 +4,7 @@ import { pdSpotEncode, photodiodeGhostBox } from '../lib/markup/photodiode'
 import { fixationHTML } from '../lib/markup/fixation'
 import { jsPsych } from 'jspsych-react'
 
-const fixation = (duration) => {
+const fixation = (duration, sleep_duration) => {
   let stimulus = fixationHTML + photodiodeGhostBox()
 
   const start = eventCodes.rest.start;
@@ -21,7 +21,7 @@ const fixation = (duration) => {
       let data = []
       pdSpotEncode(start)
       data.push({code: start, rt: Date.now() - start_time})
-      await sleep(119000)
+      await sleep(sleep_duration)
       pdSpotEncode(stop)
       data.push({code: stop, rt: Date.now() - start })
       jsPsych.data.write(data)

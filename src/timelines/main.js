@@ -10,7 +10,7 @@ let primaryTimeline = [
   preamble,
   initialInstructions(),
   instructions(lang.instructions.fixate),
-  fixation(120000),
+  fixation(120000, 119000),
   instructions(lang.instructions.close_eyes),
   eyesTask('close', 120000, 119000),
   instructions(lang.instructions.tap_ins),
