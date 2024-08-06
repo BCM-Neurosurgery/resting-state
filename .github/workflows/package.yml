@@ -42,6 +42,9 @@ jobs:
         uses: brown-ccv/gh-actions/get-package-info@main
         id: package_info
 
+      - name: install node-gyp
+        run: npm install node-gyp --save-dev
+
       # install, test, build package
       - name: npm install
         run: |
