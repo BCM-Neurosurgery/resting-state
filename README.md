@@ -96,6 +96,6 @@ Add
 
 Export to win exe
 ```
-npm run build:clinic
+npm run build:clinic or NODE_OPTIONS=--openssl-legacy-provider npm run build
 npm run dist:clinic
 ```
