@@ -30,8 +30,8 @@
     "close_eyes": "For this next section, close your eyes when you hear a \"beep\", and open when you hear another \"beep\". ",
     "tap_ins": "For this next section, start tapping the device in your chest when you hear a \"beep\", and stop when you hear another \"beep\". ",
     "tap_lead": "For this next section, start tapping the leads behind your ear when you hear a \"beep\", and stop when you hear another \"beep\". ",
-    "stretch_neck_left": "For the next 20 seconds, start stretching your neck to the left and back to the center a few times when you hear a \"beep\", and stop when you hear another \"beep\". ",
-    "stretch_neck_right": "For the next 20 seconds, start stretching your neck to the right and back to the center a few times when you hear a \"beep\", and stop when you hear another \"beep\". ",
+    "stretch_neck_left": "For the next 20 seconds, start stretching your neck to the left and back to the center. When you hear a \"beep\", start doing it a few times and stop when you hear another \"beep\". ",
+    "stretch_neck_right": "For the next 20 seconds, start stretching your neck to the right and back to the center. When you hear a \"beep\", start doing it a few times and stop when you hear another \"beep\". ",
     "align_photodiode": "Make sure the photodiode is aligned and the EEG recording has begun before continuing.",
     "adjust_volume": "Set tablet volume to 50/100.",
     "camera": "Make sure the camera is pointing to you and your face is within the camera area."
