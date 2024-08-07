@@ -45,12 +45,6 @@ jobs:
       - name: install node-gyp
         run: npm install node-gyp --save-dev
 
-      - name: update node-gyp
-        run: npm install -g node-gyp
-
-      - name: set msvs
-        run: npm config set msvs_version 2022
-
       # install, test, build package
       - name: npm install
         run: |
